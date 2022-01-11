@@ -1,0 +1,23 @@
+{
+  "name": "monconserv",
+  "version": "1.0.0",
+  "description": "Monyok Construction Services Company Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmonyok/monconserv.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmonyok/monconserv/issues"
+  },
+  "homepage": "https://github.com/mmonyok/monconserv#readme",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
