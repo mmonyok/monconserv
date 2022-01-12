@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import reportWebVitals from './reportWebVitals';
 
 // Look more into strict mode: https://reactjs.org/docs/strict-mode.html
