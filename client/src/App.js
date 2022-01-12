@@ -7,7 +7,6 @@ function App() {
     <Router>
       <div id="website">
         <Header>
-          
         </Header>
       </div>
     </Router>
