@@ -1,10 +1,37 @@
 import React from "react";
-//navbar
+import NavBar from './NavBar';
+
+const links = [
+  {
+    name: "Home",
+    href: "home"
+  },
+  {
+    name: "About Us",
+    href: "about_us"
+  },
+  {
+    name: "Services",
+    href: "services"
+  },
+  {
+    name: "Reviews",
+    href: "reviews"
+  },
+  {
+    name: "FAQs",
+    href: "faqs"
+  },
+  {
+    name: "Useful Links",
+    href: "useful_links"
+  }
+]
 
 function Header() {
   return (
     <header>
-      {/* insert navbar here with a links array to the different navbar links */}
+      <NavBar links={links} />
       {/* insert children here */}
     </header>
   );
