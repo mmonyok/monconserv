@@ -7,7 +7,7 @@ function NavBar({ links }) {
       <div>
         <NavLink
           to="/home">
-          <h4>Monyok Construction Services</h4>
+          <h4>Monyok Construction Services!</h4>
         </NavLink>
 
         <div>

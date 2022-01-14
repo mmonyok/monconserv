@@ -28,11 +28,11 @@ const links = [
   }
 ]
 
-function Header() {
+function Header({ children }) {
   return (
     <header>
       <NavBar links={links} />
-      {/* insert children here */}
+      {children}
     </header>
   );
 };
