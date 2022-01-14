@@ -6,13 +6,12 @@ import MCS from '../assets/images/MCS.svg';
 function NavBar({ links }) {
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
+      <Container fluid>
         <Navbar.Brand href="#home">
           <img
             alt="MCS Logo"
             src={MCS}
             width="100"
-            // height="100"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
