@@ -1,0 +1,31 @@
+.figureCaption {
+  color: pink !important;
+}
+
+#bannerWrapper {
+  clear: both;
+  position: relative;
+  text-align: right;
+  /* font: 18px helvetica, sans-serif; */
+  color: white;
+}
+
+#bannerTitle {
+  position: absolute;
+  top: 50%;
+  bottom: 0%;
+  right: 0%;
+  left: 0%;
+}
+
+#title {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  font-size: 4vw;
+}
+
+#bannerTitle:before {
+  display: block;
+  height: 30%;
+}
