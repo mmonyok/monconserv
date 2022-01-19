@@ -1,16 +1,32 @@
-.figureCaption {
-  color: pink !important;
-}
-
-#bannerWrapper {
-  clear: both;
+.imageWrapper {
   position: relative;
   text-align: right;
-  /* font: 18px helvetica, sans-serif; */
-  color: white;
 }
 
-#bannerTitle {
+.homeImageCaptionMain {
+  position: absolute;
+  top: 50%;
+  bottom: 0%;
+  right: 1.7%;
+  left: 0%;
+}
+
+.homeImageCaption {
+  position: absolute;
+  top: 20%;
+  bottom: 0%;
+  right: 2.5%;
+  left: 0%;
+}
+
+.homeImageTitle {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  font-size: 4vw;
+}
+
+#bannerCaption {
   position: absolute;
   top: 50%;
   bottom: 0%;
@@ -18,14 +34,9 @@
   left: 0%;
 }
 
-#title {
+#bannerTitle {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.7);
   color: black;
   font-size: 4vw;
-}
-
-#bannerTitle:before {
-  display: block;
-  height: 30%;
 }

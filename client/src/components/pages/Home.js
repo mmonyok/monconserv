@@ -11,36 +11,46 @@ import '../../assets/styles/Home.css';
 const images = [
   {
     title: "Cement Work",
-    src: cement
+    src: cement,
+    class: "col w-75 mx-auto imageWrapper",
+    caption: "homeImageCaptionMain"
   },
   {
     title: "Block Work",
-    src: block
+    src: block,
+    class: "col w-50 imageWrapper",
+    caption: "homeImageCaption"
   },
   {
     title: "Brick Work",
-    src: brick
+    src: brick,
+    class: "col w-50 imageWrapper",
+    caption: "homeImageCaption"
   },
   {
     title: "Excavation",
-    src: excavation
+    src: excavation,
+    class: "col w-50 imageWrapper",
+    caption: "homeImageCaption"
   },
   {
     title: "Demolition",
-    src: demolition
+    src: demolition,
+    class: "col w-50 imageWrapper",
+    caption: "homeImageCaption"
   }
 ];
 
 export default function Home(/* { images } */) {
   return (
     <section>
-      <div id="bannerWrapper">
-        <Figure id="banner">
+      <div /* id="bannerWrapper" */>
+        <Figure className="imageWrapper">
           <Figure.Image
             fluid
             src={banner} />
-          <Figure.Caption id="bannerTitle">
-            <h1 id="title">Quality over Quantity</h1>
+          <Figure.Caption id="bannerCaption">
+            <h1 id="bannerTitle">Quality over Quantity</h1>
           </Figure.Caption>
         </Figure>
       </div>
@@ -53,14 +63,16 @@ export default function Home(/* { images } */) {
         </div>
         <div>
           <h2>WHAT WE DO</h2>
+          <p>From block foundations and footings for house foundations to chimney repair. We have you covered for all your concrete and masonry needs.</p>
           <Figure className='row row-cols-2'>
             {images.map((image, a) => (
-              <div className='col w-50'><Figure.Image
+              <div className={image.class}><Figure.Image
                 key={a}
                 rounded
                 src={image.src}
-                className='border border-dark border-5' />
-                <Figure.Caption className="figureCaption">{image.title}</Figure.Caption></div>
+                className='border border-dark border-5 homeImageTitle' />
+                <Figure.Caption className={image.caption}>
+                  <h2 className="homeImageTitle">{image.title}</h2></Figure.Caption></div>
             ))}
           </Figure>
         </div>
