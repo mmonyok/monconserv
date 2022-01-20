@@ -23,8 +23,8 @@ const links = [
     href: "faqs"
   },
   {
-    name: "Useful Links",
-    href: "useful_links"
+    name: "Log In",
+    href: "login"
   }
 ]
 
