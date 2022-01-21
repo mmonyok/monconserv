@@ -14,10 +14,6 @@ const commentSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  approved: {
-    type: Boolean,
-    default: false
-  },
   replies: [replySchema]
 });
 
