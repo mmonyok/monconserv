@@ -7,7 +7,7 @@ const typeDefs = gql`
     email: String!
   }
   type Comment {
-    id: ID!
+    _id: ID!
     content: String!
     name: String!
     date: Date!
@@ -40,3 +40,5 @@ const typeDefs = gql`
       date: Date): Comment
   }
 `;
+
+// need to figure out the typeDef for editing a reply comment.
