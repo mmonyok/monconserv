@@ -1,10 +1,11 @@
-import React/* , { useState } */ from 'react';
-// import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import Contact from './Contact.js';
 import MCS from '../assets/images/MCS.svg';
 import "../assets/styles/NavBar.css";
 
 function NavBar({ links }) {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <Navbar bg="light" expand="lg" sticky="top" className="d-flex flex-row" id="navbar">
       <Container>
@@ -22,15 +23,22 @@ function NavBar({ links }) {
           <Nav>
             {links.map((link, a) => (
               (link.name === "Services" ?
-                <NavDropdown title={link.name} id="basic-nav-dropdown">
-                  <NavDropdown.Item href={link.href}>All Services</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="concrete">Concrete</NavDropdown.Item>
-                  <NavDropdown.Item href="block">Block</NavDropdown.Item>
-                  <NavDropdown.Item href="brick">Brick</NavDropdown.Item>
-                  <NavDropdown.Item href="excavation">Excavation</NavDropdown.Item>
-                  <NavDropdown.Item href="demolition">Demolition</NavDropdown.Item>
-                </NavDropdown>
+                <>
+                  <NavDropdown title={link.name} id="basic-nav-dropdown">
+                    <NavDropdown.Item href={link.href}>All Services</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="concrete">Concrete</NavDropdown.Item>
+                    <NavDropdown.Item href="block">Block</NavDropdown.Item>
+                    <NavDropdown.Item href="brick">Brick</NavDropdown.Item>
+                    <NavDropdown.Item href="excavation">Excavation</NavDropdown.Item>
+                    <NavDropdown.Item href="demolition">Demolition</NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link
+                    key="z"
+                    href="#"
+                    onClick={() => setModalShow(true)}
+                    >Contact</Nav.Link>
+                </>
                 :
                 <Nav.Link
                   key={a}
@@ -42,6 +50,9 @@ function NavBar({ links }) {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <Contact
+        show={modalShow}
+        onHide={() => setModalShow(false)} />
     </Navbar>
   );
 };
