@@ -1,0 +1,26 @@
+footer {
+  border-top: 5px solid #1089FF;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+footer li {
+  list-style: none;
+}
+
+.linkIcon {
+  color: #1089FF !important;
+}
+
+.thumbtack {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+
+}
+
+.links a:hover {
+  color: #1089FF;
+}
