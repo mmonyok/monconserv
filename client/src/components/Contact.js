@@ -17,14 +17,15 @@ export default function Contact(props) {
       </Modal.Header>
       <Modal.Body>
         <h4 className="text-center">
-          {/* <i className="far fa-envelope me-2"></i> */}
+
           <a href="mailto:joemonyok@outlook.com">
+            <i className="far fa-envelope me-2"></i>
             joemonyok@outlook.com
           </a>
         </h4>
         <h4 className="text-center">
-          {/* <i className="fas fa-mobile-alt me-2"></i> */}
           <a href="tel:9524923671">
+            <i className="fas fa-mobile-alt me-2"></i>
             952-492-3671
           </a>
         </h4>

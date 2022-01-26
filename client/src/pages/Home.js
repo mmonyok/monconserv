@@ -1,47 +1,47 @@
 import React from 'react';
-import { Container, Figure, Image } from 'react-bootstrap';
-import banner from '../../assets/images/brick_wall.jpg';
-import cement from '../../assets/images/cement1.jpg';
-import block from '../../assets/images/block1.jpg';
-import brick from '../../assets/images/brick1.jpg';
-import excavation from '../../assets/images/excavation1.jpg';
-import demolition from '../../assets/images/demolition1.jpg';
-import '../../assets/styles/Home.css';
+import { Container, Figure } from 'react-bootstrap';
+import banner from '../assets/images/brick_wall.jpg';
+import cement from '../assets/images/cement1.jpg';
+import block from '../assets/images/block1.jpg';
+import brick from '../assets/images/brick1.jpg';
+import excavation from '../assets/images/excavation1.jpg';
+import demolition from '../assets/images/demolition1.jpg';
+import '../assets/styles/Home.css';
 
 const images = [
   {
     title: "Cement Work",
     src: cement,
-    class: "col w-75 mx-auto imageWrapper",
+    class: "col w-100 mx-auto imageWrapper",
     caption: "homeImageCaptionMain"
   },
   {
     title: "Block Work",
     src: block,
-    class: "col w-50 imageWrapper",
+    class: "col w-25 imageWrapper",
     caption: "homeImageCaption"
   },
   {
     title: "Brick Work",
     src: brick,
-    class: "col w-50 imageWrapper",
+    class: "col w-25 imageWrapper",
     caption: "homeImageCaption"
   },
   {
     title: "Excavation",
     src: excavation,
-    class: "col w-50 imageWrapper",
+    class: "col w-25 imageWrapper",
     caption: "homeImageCaption"
   },
   {
     title: "Demolition",
     src: demolition,
-    class: "col w-50 imageWrapper",
+    class: "col w-25 imageWrapper",
     caption: "homeImageCaption"
   }
 ];
 
-export default function Home(/* { images } */) {
+export default function Home(props) {
   return (
     <section>
       <div /* id="bannerWrapper" */>
@@ -64,13 +64,13 @@ export default function Home(/* { images } */) {
         <div>
           <h2>WHAT WE DO</h2>
           <p>From block foundations and footings for house foundations to chimney repair. We have you covered for all your concrete and masonry needs.</p>
-          <Figure className='row row-cols-2'>
+          <Figure className='row row-cols-2 justify-content-center'>
             {images.map((image, a) => (
               <div className={image.class}><Figure.Image
                 key={a}
                 rounded
                 src={image.src}
-                className='border border-dark border-5 homeImageTitle' />
+                className='homeImageTitle serviceImage' />
                 <Figure.Caption className={image.caption}>
                   <h2 className="homeImageTitle">{image.title}</h2></Figure.Caption></div>
             ))}

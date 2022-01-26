@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Figure } from 'react-bootstrap';
-import joe from '../../assets/images/joe.jpg';
-import '../../assets/styles/AboutUs.css';
+import joe from '../assets/images/joe.jpg';
+import '../assets/styles/AboutUs.css';
 
 export default function AboutUs() {
   return (

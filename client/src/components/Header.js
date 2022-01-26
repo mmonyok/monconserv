@@ -21,12 +21,8 @@ const links = [
   {
     name: "FAQs",
     href: "faqs"
-  },
-  {
-    name: "Log In",
-    href: "login"
   }
-]
+];
 
 function Header({ children }) {
   return (

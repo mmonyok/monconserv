@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/pages/Home';
-import AboutUs from './components/pages/AboutUs';
-import Reviews from './components/pages/Reviews';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Reviews from './pages/Reviews';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
