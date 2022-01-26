@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Contact from './Contact.js';
+import LogIn from './LogIn.js';
 import MCS from '../assets/images/MCS.svg';
 import "../assets/styles/NavBar.css";
 
 function NavBar({ links }) {
   const [modalShow, setModalShow] = useState(false);
+  const [showLogIn, setShowLogIn] = useState(false);
   return (
     <Navbar bg="light" expand="lg" sticky="top" className="d-flex flex-row" id="navbar">
       <Container>
@@ -37,7 +39,7 @@ function NavBar({ links }) {
                     key="z"
                     href="#"
                     onClick={() => setModalShow(true)}
-                    >Contact</Nav.Link>
+                  >Contact</Nav.Link>
                 </>
                 :
                 <Nav.Link
@@ -47,12 +49,20 @@ function NavBar({ links }) {
                 </Nav.Link>
               )
             ))}
+            <Nav.Link
+              key="y"
+              href="#"
+              onClick={() => setShowLogIn(true)}
+            >Log In</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
       <Contact
         show={modalShow}
         onHide={() => setModalShow(false)} />
+        <LogIn
+        show={showLogIn}
+        onHide={() => setShowLogIn(false)} />
     </Navbar>
   );
 };
