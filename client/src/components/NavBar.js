@@ -6,7 +6,7 @@ import MCS from '../assets/images/MCS.svg';
 import "../assets/styles/NavBar.css";
 
 function NavBar({ links }) {
-  const [modalShow, setModalShow] = useState(false);
+  const [showContact, setShowContact] = useState(false);
   const [showLogIn, setShowLogIn] = useState(false);
   return (
     <Navbar bg="light" expand="lg" sticky="top" className="d-flex flex-row" id="navbar">
@@ -38,7 +38,7 @@ function NavBar({ links }) {
                   <Nav.Link
                     key="z"
                     href="#"
-                    onClick={() => setModalShow(true)}
+                    onClick={() => setShowContact(true)}
                   >Contact</Nav.Link>
                 </>
                 :
@@ -58,8 +58,8 @@ function NavBar({ links }) {
         </Navbar.Collapse>
       </Container>
       <Contact
-        show={modalShow}
-        onHide={() => setModalShow(false)} />
+        show={showContact}
+        onHide={() => setShowContact(false)} />
         <LogIn
         show={showLogIn}
         onHide={() => setShowLogIn(false)} />

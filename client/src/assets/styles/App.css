@@ -1,0 +1,41 @@
+:root {
+  --darkBlue: #23374d;
+  --blue: #1089ff;
+  --light: #e5e5e5;
+  --lightest: #eeeeee;
+}
+
+.text {
+  color: var(--darkBlue);
+}
+
+.fontLight {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.fontBold {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.textTest {
+  color: red;
+}
+
+#website {
+  background-color: var(--lightest);
+}
+
+body {
+  background-color: greenyellow;
+}
+
+header {
+  background-color: var(--lightest);
+}
