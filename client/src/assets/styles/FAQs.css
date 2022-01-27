@@ -1,0 +1,26 @@
+.faqsSpan {
+  color: var(--blue);
+}
+
+.groupWhole {
+  background-color: var(--lightest) !important;
+}
+
+.groupHead [aria-expanded="true"] {
+  background-color: var(--blue) !important;
+  color: var(--light) !important;
+}
+
+.sectionHead [aria-expanded="true"] {
+  background-color: var(--darkBlue) !important;
+  color: var(--light) !important;
+}
+
+.sectionWhole {
+  background-color: var(--light) !important;
+}
+
+#contactLink {
+  text-decoration: none;
+  color: var(--blue);
+}

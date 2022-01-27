@@ -1,5 +1,6 @@
 footer {
   border-top: 5px solid #1089FF;
+  background-color: var(--light);
 }
 
 footer a {
