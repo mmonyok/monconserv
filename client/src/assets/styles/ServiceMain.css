@@ -1,0 +1,14 @@
+.imageWrapper {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  display: inline;
+  top: 0%;
+  right: 0%;
+  left: 0%;
+  background-color: rgba(229, 229, 229, 0.8);
+  color: var(--darkBlue) !important;
+  font-size: 3vh !important;
+}

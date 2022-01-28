@@ -5,6 +5,10 @@
   --lightest: #eeeeee;
 }
 
+.darkSpan {
+  color: var(--blue);
+}
+
 .text {
   color: var(--darkBlue) !important;
 }
