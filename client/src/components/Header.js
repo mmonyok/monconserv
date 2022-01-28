@@ -12,7 +12,28 @@ const links = [
   },
   {
     name: "Services",
-    href: "services"
+    services: [
+      {
+        name: "Concrete",
+        href: "concrete",
+      },
+      {
+        name: "Block",
+        href: "block",
+      },
+      {
+        name: "Brick",
+        href: "brick",
+      },
+      {
+        name: "Excavation",
+        href: "excavation",
+      },
+      {
+        name: "Demolition",
+        href: "demolition",
+      }
+    ] 
   },
   {
     name: "Reviews",
