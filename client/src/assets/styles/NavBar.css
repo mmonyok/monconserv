@@ -17,10 +17,6 @@
   color: var(--darkBlue);
 }
 
-.test {
-  color: var(--darkBlue) !important;
-}
-
 #navbar {
   border-bottom: 5px solid var(--blue) !important;
   background-color: var(--light) !important;

@@ -115,7 +115,7 @@ export default function FAQs(props) {
   const [showContact, setShowContact] = useState(false);
   return (
     <Container>
-      <h1 className="ms-5 mt-3 text-center text fontBold"><span className="faqsSpan">F</span>requently <span className="faqsSpan">A</span>sked <span className="faqsSpan">Q</span>uestion<span className="faqsSpan">s</span></h1>
+      <h1 className="ms-5 mt-3 text-center text fontBold"><span className="darkSpan">F</span>requently <span className="darkSpan">A</span>sked <span className="darkSpan">Q</span>uestion<span className="darkSpan">s</span></h1>
       <hr />
       <p className="text-center text font">Please view the following Frequently Asked Questions by subject matter. 
       <br />
