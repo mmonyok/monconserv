@@ -1,5 +1,4 @@
 import React from 'react';
-// import thumbtack from '../assets/images/thumbtack.png';
 import '../assets/styles/Footer.css';
 
 const links = [
@@ -32,6 +31,7 @@ function Footer() {
             key={a}
             className={`links ${link.class}`}>
             <a
+              className="text font"
               key={b}
               href={link.website}
               target="_blank"
@@ -41,7 +41,7 @@ function Footer() {
           </li>
         ))}
       </ul>
-      <h5><i class="far fa-copyright"></i> <sup>1995</sup> Monyok Construction Services</h5>
+      <h5 className="fontBold text"><i className="far fa-copyright"></i> <sup>1995</sup> Monyok Construction Services</h5>
     </footer>
   )
 };

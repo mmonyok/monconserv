@@ -9,7 +9,7 @@ import brick from '../assets/images/brick1.jpg';
 import excavation from '../assets/images/excavation1.jpg';
 import demolition from '../assets/images/demolition1.jpg';
 
-// This array contains image data, which will make our maps work.
+// This array contains image data, which will make our maps function work.
 const images = [
   {
     title: "Block Work",
@@ -35,12 +35,14 @@ export default function ServiceMain() {
       <Row>
         <Col>
           <Figure>
-            <div className="mx-auto w-50 imageWrapper">
+            <div 
+              className="mx-auto w-50 imageWrapper"
+              id="mainWrapper">
               <Figure.Image
                 rounded
                 src={cement}></Figure.Image>
               <Figure.Caption
-                className="caption text-end">
+                className="pe-2 caption text-end">
                 Cement Work
               </Figure.Caption>
             </div>
@@ -49,7 +51,7 @@ export default function ServiceMain() {
       </Row>
       <Row>
         {images.map((image, a) => (
-          <Col>
+          <Col className="subColumns">
             <Figure>
               <div className="imageWrapper">
                 <Figure.Image
@@ -57,7 +59,7 @@ export default function ServiceMain() {
                   rounded
                   src={image.src}></Figure.Image>
                 <Figure.Caption
-                  className="caption text-end">{image.title}</Figure.Caption>
+                  className="pe-2 caption text-end">{image.title}</Figure.Caption>
               </div>
             </Figure>
           </Col>

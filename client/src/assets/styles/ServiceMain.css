@@ -10,5 +10,16 @@
   left: 0%;
   background-color: rgba(229, 229, 229, 0.8);
   color: var(--darkBlue) !important;
-  font-size: 3vh !important;
+  font-size: 2.9vh !important;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+  #mainWrapper {
+    width: 100% !important;
+  }
+
+  .subColumns {
+    flex: 0 0 auto !important;
+    width: 50% !important;
+  }
 }

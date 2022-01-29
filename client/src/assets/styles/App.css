@@ -5,7 +5,12 @@
   --lightest: #eeeeee;
 }
 
-.darkSpan {
+/* This css makes sure the footer stays at the bottom. */
+.contentContainer {
+  min-height: calc(100vh - 119px);
+}
+
+.blueSpan {
   color: var(--blue);
 }
 
@@ -13,23 +18,23 @@
   color: var(--darkBlue) !important;
 }
 
+.textTest {
+  color: red !important;
+}
+
 .fontLight {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
 }
 
 .font {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500 !important;
 }
 
 .fontBold {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 700 !important;
-}
-
-.textTest {
-  color: red;
 }
 
 #website {

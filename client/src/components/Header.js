@@ -48,7 +48,7 @@ const links = [
 
 function Header({ children }) {
   return (
-    <header>
+    <header className="contentContainer">
       <NavBar links={links} />
       {children}
     </header>

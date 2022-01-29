@@ -12,6 +12,10 @@ footer li {
   list-style: none;
 }
 
+footer ul {
+  padding: 0px;
+}
+
 .linkIcon {
   color: #1089FF !important;
 }
