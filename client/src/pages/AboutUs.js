@@ -5,10 +5,12 @@ import '../assets/styles/AboutUs.css';
 
 export default function AboutUs() {
   return (
-    <Container fluid className="d-flex flex-column">
-      <h1 className="text-center my-3">About Monyok Construction Services</h1>
-      <section className="d-flex flex-row flex-wrap-reverse justify-content-center mx-5">
-        <p className="mt-5 pe-5" id="aboutText">
+    <Container fluid className="d-flex flex-column text">
+      <h1 className="text-center my-3 fontBold">About Monyok Construction Services</h1>
+      <section 
+        className="mb-3 d-flex flex-row flex-wrap-reverse justify-content-center mx-5"
+        id="aboutSection">
+        <p className="mt-5 pe-5 font flex-fill" id="aboutText">
           Joe started out in commercial and residential framing in 1986, which involved some block & concrete work. After leaving framing, Joe was hired on by Reiscraft Masonry and worked several years for them. In 1995, Joe officially started his own Business. Monyok Construction Services has been continuing to build a strong base of satisfied customers since then.
           <br />
           <br />
@@ -26,7 +28,7 @@ export default function AboutUs() {
           <br />
           Thank you for considering Monyok Construction Services for all of your concrete and masonry needs!
         </p>
-        <Figure.Image src={joe} id="joe" />
+        <Figure.Image rounded src={joe} id="joe" />
       </section>
     </Container>
   );
