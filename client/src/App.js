@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Layout from './components/Layout';
+import ServiceLayout from './components/ServiceLayout';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
@@ -22,9 +23,11 @@ function App() {
               <Route index element={<Home />} />
               <Route path="home" element={<Home />} />
               <Route path="about_us" element={<AboutUs />} />
-              <Route path="services" element={<Services />} >
+              <Route path="/services" element={<ServiceLayout />} >
+                <Route index element={<Services />} />
                 <Route path="concrete" element={<Concrete />} />
               </Route>
+              <Route path="concrete" element={<Concrete />} />
               <Route path="reviews" element={<Reviews />} />
               <Route path="faqs" element={<FAQs />} />
             </Route>
