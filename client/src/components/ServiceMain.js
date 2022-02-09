@@ -35,7 +35,7 @@ export default function ServiceMain() {
       <Row>
         <Col>
           <Figure>
-            <div 
+            <div
               className="mx-auto w-50 imageWrapper"
               id="mainWrapper">
               <Figure.Image

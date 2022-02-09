@@ -15,7 +15,7 @@ export default function Home(props) {
           <hr />
           <h1 className="fontBold">Welcome!</h1>
           <p>
-            We are a family owned and operated Concrete and Masonry business. Take a look around to find out a little bit more about us and what we can do for you.
+            We are a family owned and locally operated Concrete and Masonry business. Take a look around to find out a little bit more about us and what we can do for you.
           </p>
         </div>
         <div className="mt-5">
