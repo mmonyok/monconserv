@@ -1,0 +1,28 @@
+.serviceContainer {
+  background-color: var(--light);
+  display: flex;
+  flex-direction: column;
+}
+
+#optionsBtn {
+  width: fit-content;
+  background-color: var(--darkBlue);
+  border: none;
+}
+
+@media only screen and (min-width: 1025px) {
+  .serviceContainer {
+    flex-direction: row;
+  }
+
+  #divider {
+    border-left: 1px solid var(--darkBlue);
+    height: 100%;
+  }
+  
+  .serviceSection {
+    background-color: var(--lightest);
+    padding-left: 12px !important;
+    width: calc(100vw - 165px) !important;
+  }
+}
