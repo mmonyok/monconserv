@@ -10,7 +10,7 @@ export default function AboutUs() {
       <section 
         className="mb-3 d-flex flex-row flex-wrap-reverse justify-content-center mx-5"
         id="aboutSection">
-        <p className="mt-5 pe-5 font flex-fill" id="aboutText">
+        <p className="mt-5 pe-5 font" id="aboutText">
           Joe started out in commercial and residential framing in 1986, which involved some block & concrete work. After leaving framing, Joe was hired on by Reiscraft Masonry and worked several years for them. In 1995, Joe officially started his own Business. Monyok Construction Services has been continuing to build a strong base of satisfied customers since then.
           <br />
           <br />
