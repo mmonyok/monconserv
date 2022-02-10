@@ -1,13 +1,72 @@
 import React, { useState } from 'react';
 import { Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Contact from './Contact.js';
 import LogIn from './LogIn.js';
 import MCS from '../assets/images/MCS.svg';
 import "../assets/styles/NavBar.css";
 
-function NavBar({ links }) {
+const links = [
+  {
+    name: "Home",
+    href: "/home",
+    key: "a"
+  },
+  {
+    name: "About Us",
+    href: "/about_us",
+    key: "b"
+  },
+  {
+    name: "Services",
+    href: "/services",
+    key: "c",
+    services: [
+      {
+        name: "Concrete",
+        href: "/services/concrete",
+      },
+      {
+        name: "Block",
+        href: "/services/block",
+      },
+      {
+        name: "Brick",
+        href: "/ervices/brick",
+      },
+      {
+        name: "Excavation",
+        href: "/services/excavation",
+      },
+      {
+        name: "Demolition",
+        href: "/services/demolition",
+      }
+    ]
+  },
+  /* {
+    name: "Reviews",
+    href: "/reviews",
+    key: "e"
+  }, */
+  {
+    name: "FAQs",
+    href: "/faqs",
+    key: "f"
+  }
+];
+
+function NavBar(props) {
   const [showContact, setShowContact] = useState(false);
   const [showLogIn, setShowLogIn] = useState(false);
+  const [toggleClass, setToggleClass] = useState(false);
+  function toggleTrue() {
+    setToggleClass(true)
+  }
+  function toggleFalse() {
+    setToggleClass(false)
+  }
+
   return (
     <Navbar collapseOnSelect sticky="top" expand="md" className="d-flex flex-row" id="navbar">
       <Navbar.Brand className="ms-5 py-1 flex-fill" id="navBrand" href="#home">
@@ -21,39 +80,54 @@ function NavBar({ links }) {
         className="me-3"
         id="toggler" />
       <Navbar.Collapse id="navToggle" className="justify-content-around font">
-        <Nav id="linkWrap" className="text">
+        <Nav
+          id="linkWrap"
+          className="text">
           {links.map((link, a) => (
             (link.name === "Services" ?
               <>
                 <NavDropdown
                   title={link.name}
+                  href="#"
                   id="navDropdown"
-                  className="navLinks">
-                  <NavDropdown.Item className="text fontBold" href={link.href}>All Services</NavDropdown.Item>
+                  className={`navLinks ${toggleClass ? 'active' : ''}`}>
+                  <NavDropdown.Item
+                    className="text fontBold"
+                    eventKey="10"
+                    as={Link}
+                    to={link.href}
+                    onClick={toggleTrue}>All Services</NavDropdown.Item>
                   <NavDropdown.Divider />
                   {link.services.map((service, b) => (
-                    <NavDropdown.Item className="text" href={service.href}>{service.name}</NavDropdown.Item>
+                    <NavDropdown.Item
+                      eventKey={b}
+                      className="text"
+                      as={Link}
+                      to={service.href}
+                      onClick={toggleTrue}>{service.name}</NavDropdown.Item>
                   ))}
                 </NavDropdown>
                 <Nav.Link
-                  key="z"
-                  href="#"
+                  as={Link}
+                  to="#"
                   className="navLinks text"
                   onClick={() => setShowContact(true)}
                 >Contact</Nav.Link>
               </>
               :
               <Nav.Link
-                key={a}
-                href={link.href}
+                onClick={toggleFalse}
+                eventKey={link.key}
+                as={Link}
+                to={link.href}
                 className="navLinks text"
               >{link.name}
               </Nav.Link>
             )
           ))}
           <Nav.Link
-            key="y"
-            href="#"
+            as={Link}
+            to="#"
             className="navLinks text"
             onClick={() => setShowLogIn(true)}
           >Log In</Nav.Link>
