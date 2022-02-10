@@ -115,7 +115,7 @@ export default function FAQs(props) {
   const [showContact, setShowContact] = useState(false);
   return (
     <Container>
-      <h1 className="ms-5 mt-3 text-center text fontBold"><span className="darkSpan">F</span>requently <span className="darkSpan">A</span>sked <span className="darkSpan">Q</span>uestion<span className="darkSpan">s</span></h1>
+      <h1 className="mt-3 text-center text fontBold"><span className="blueSpan">F</span>requently <span className="blueSpan">A</span>sked <span className="blueSpan">Q</span>uestion<span className="blueSpan">s</span></h1>
       <hr />
       <p className="text-center text font">Please view the following Frequently Asked Questions by subject matter. 
       <br />
@@ -140,7 +140,7 @@ export default function FAQs(props) {
               <Accordion>
                 {section.qArray.map((group, b) => (
                   <Accordion.Item
-                    className="groupWhole fontBold"
+                    className="groupWhole font"
                     eventKey={b}>
                     <Accordion.Header className="groupHead">{group.question}</Accordion.Header>
                     <Accordion.Body className="ms-3 groupBody">{group.answer}</Accordion.Body>

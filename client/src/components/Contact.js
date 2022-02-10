@@ -18,7 +18,7 @@ export default function Contact(props) {
       size="lg"
       aria-labelledby="contact-form"
       centered
-      className="text ps-0"
+      className="text ps-0 myModals"
     >
       <Modal.Header className="modalHead" closeButton>
         <Modal.Title className="fontBold">
@@ -177,9 +177,11 @@ export default function Contact(props) {
               <div className="text-center font">
                 <p>
                   You will receive a confirmation email with your entered details upon submission of this form.
+                  <br />
+                  If you don't receive confirmation within 5 minutes, check your spam filter.
                 </p>
                 <Button
-                  className="contactBtn"
+                  id="contactBtn"
                 /* user is unable to submit form until required fields are filled */ disabled={!isValid}
                   type="submit">Submit</Button>
               </div>

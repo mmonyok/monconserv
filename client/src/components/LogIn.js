@@ -16,7 +16,7 @@ export default function LogIn(props) {
       size="lg"
       aria-labelledby="login-form"
       centered
-      className="text"
+      className="text myModals"
     >
       <Modal.Header className="modalHead" closeButton>
         <Modal.Title className="fontBold">
