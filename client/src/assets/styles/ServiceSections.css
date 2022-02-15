@@ -2,6 +2,24 @@
   background-color: var(--light);
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between !important; */
+}
+
+.serviceSection {
+  width: 100%;
+}
+
+.serviceTitle {
+  margin-top: 16px;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.listItem {
+  padding: 8px !important;
 }
 
 #optionsBtn {
@@ -10,12 +28,22 @@
   border: none;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 768px) {
+  .serviceTitle {
+    text-align: start;
+  }
+  .listContainer {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (min-height: 850px) {
   .serviceContainer {
     flex-direction: row;
   }
 
-  #divider {
+  .divider {
     border-left: 1px solid var(--darkBlue);
     height: 100%;
   }

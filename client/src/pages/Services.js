@@ -9,11 +9,12 @@ const currentYear = new Date().getFullYear();
 const year = currentYear - 1995;
 
 export default function AllServices() {
+  let path = window.location.pathname;
   return (
     <Container fluid className="serviceContainer text font">
-      <Sidebar />
+      <Sidebar urlPath={path} />
       <main className="d-inline-flex flex-row">
-        <div id="divider" />
+        <div className="divider" />
         <section className="serviceSection">
           <h1 className="my-3 fontBold">Our Services</h1>
           <div className="text-center">
@@ -22,6 +23,7 @@ export default function AllServices() {
           </div>
           <ServiceMain />
         </section>
+        <div className="divider" />
       </main>
     </Container>
   )
