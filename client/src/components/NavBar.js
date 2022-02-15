@@ -32,7 +32,7 @@ const links = [
       },
       {
         name: "Brick",
-        href: "/ervices/brick",
+        href: "/services/brick",
       },
       {
         name: "Excavation",
@@ -125,12 +125,12 @@ function NavBar(props) {
               </Nav.Link>
             )
           ))}
-          <Nav.Link
+          {/* <Nav.Link
             as={Link}
             to="#"
             className="navLinks text"
             onClick={() => setShowLogIn(true)}
-          >Log In</Nav.Link>
+          >Log In</Nav.Link> */}
         </Nav>
         <Contact
           show={showContact}
