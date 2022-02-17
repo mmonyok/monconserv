@@ -43,7 +43,7 @@ export default function ServiceMain() {
                 src={cement}></Figure.Image>
               <Figure.Caption
                 className="pe-2 caption text-end">
-                Cement Work
+                Concrete Work
               </Figure.Caption>
             </div>
           </Figure>

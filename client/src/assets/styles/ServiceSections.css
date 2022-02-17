@@ -1,5 +1,5 @@
 .serviceContainer {
-  background-color: var(--light);
+  background-color: var(--lightest);
   display: flex;
   flex-direction: column;
   /* justify-content: space-between !important; */
@@ -41,16 +41,8 @@
 @media only screen and (min-width: 1025px) and (min-height: 850px) {
   .serviceContainer {
     flex-direction: row;
-  }
-
-  .divider {
     border-left: 1px solid var(--darkBlue);
-    height: 100%;
-  }
-  
-  .serviceSection {
-    background-color: var(--lightest);
-    padding-left: 12px !important;
-    width: calc(100vw - 165px) !important;
+    border-right: 1px solid var(--darkBlue);
+    min-width: calc(100vw - 165px) !important;
   }
 }

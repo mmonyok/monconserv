@@ -10,6 +10,7 @@ import Reviews from './pages/Reviews';
 import FAQs from './pages/FAQs';
 // These are our service pages.
 import Concrete from './pages/Concrete';
+import Block from './pages/Block';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './assets/styles/App.css';
 
@@ -19,18 +20,18 @@ function App() {
       <div id="website">
         <Header>
           <Routes>
-            <Route path="/" element={<Layout />} >
-              <Route index element={<Home />} />
-              <Route path="home" element={<Home />} />
-              <Route path="about_us" element={<AboutUs />} />
-              <Route path="/services" element={<ServiceLayout />} >
-                <Route index element={<Services />} />
-                <Route path="concrete" element={<Concrete />} />
-              </Route>
+            <Route element={<Layout />} />
+            <Route index element={<Home />} />
+            <Route path="home" element={<Home />} />
+            <Route path="about_us" element={<AboutUs />} />
+            <Route path="services" element={<ServiceLayout />} >
+              <Route index element={<Services />} />
               <Route path="concrete" element={<Concrete />} />
-              <Route path="reviews" element={<Reviews />} />
-              <Route path="faqs" element={<FAQs />} />
+              <Route path="block" element={<Block />} />
             </Route>
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="faqs" element={<FAQs />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </Header>
         <Footer />
