@@ -13,6 +13,11 @@
   margin-top: 16px;
 }
 
+.hr {
+  color: var(--darkBlue) !important;
+  opacity: .50;
+}
+
 .listContainer {
   display: flex;
   flex-direction: row;
@@ -20,6 +25,20 @@
 
 .listItem {
   padding: 8px !important;
+  border-color: var(--darkBlue) !important;
+}
+
+.popoverBody {
+  background-color: var(--darkBlue) !important;
+}
+
+.popItem {
+  border-color: var(--darkBlue) !important;
+  background-color: var(--lightest);
+}
+
+.popover-arrow::after {
+  border-bottom-color: var(--darkBlue) !important;
 }
 
 #optionsBtn {
@@ -35,6 +54,13 @@
   .listContainer {
     display: flex !important;
     flex-direction: column !important;
+  }
+  .listGroup {
+    justify-content: center;
+    padding: 5px 0 !important;
+  }
+  .serviceSubText {
+    margin-left: 25px;
   }
 }
 
