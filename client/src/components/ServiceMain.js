@@ -16,7 +16,7 @@ const images = [
     src: block,
   },
   {
-    title: "Brick Work",
+    title: "Brick Repair",
     src: brick,
   },
   {

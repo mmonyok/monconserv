@@ -38,13 +38,13 @@ const sidebarNavs = [
   },
   {
     name: "Excavate",
-    href: "excavation",
+    href: "excavate",
     src: excavationIcon,
     key: "24"
   },
   {
     name: "Demolish",
-    href: "demolition",
+    href: "demolish",
     src: demolitionIcon,
     key: "25"
   },

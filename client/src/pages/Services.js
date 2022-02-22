@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import ServiceMain from '../components/ServiceMain';
-// import Sidebar from '../components/Sidebar';
 import '../assets/styles/ServiceSections.css';
 
 const currentYear = new Date().getFullYear();

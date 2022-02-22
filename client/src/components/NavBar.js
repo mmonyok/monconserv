@@ -36,11 +36,11 @@ const links = [
       },
       {
         name: "Excavation",
-        href: "/services/excavation",
+        href: "/services/excavate",
       },
       {
         name: "Demolition",
-        href: "/services/demolition",
+        href: "/services/demolish",
       }
     ]
   },
@@ -69,7 +69,7 @@ function NavBar(props) {
 
   return (
     <Navbar collapseOnSelect sticky="top" expand="md" className="d-flex flex-row" id="navbar">
-      <Navbar.Brand className="ms-5 py-1 flex-fill" id="navBrand" href="#home">
+      <Navbar.Brand className="ms-5 py-1 flex-fill" id="navBrand" href="/home">
         <Image
           alt="MCS Logo"
           src={MCS}

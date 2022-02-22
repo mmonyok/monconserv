@@ -15,7 +15,7 @@
 
 .hr {
   color: var(--darkBlue) !important;
-  opacity: .50;
+  opacity: 0.5;
 }
 
 .listContainer {
@@ -51,14 +51,26 @@
   .serviceTitle {
     text-align: start;
   }
+
   .listContainer {
     display: flex !important;
     flex-direction: column !important;
   }
+
   .listGroup {
     justify-content: center;
     padding: 5px 0 !important;
   }
+  
+  #groupA,
+  #groupB,
+  #groupC,
+  #groupD,
+  #groupE,
+  #groupF {
+    margin: 0px !important;
+  }
+
   .serviceSubText {
     margin-left: 25px;
   }

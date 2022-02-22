@@ -1,6 +1,7 @@
 #carousel {
   border: 1px solid var(--darkBlue);
   border-radius: 0.24rem !important;
+  background-color: var(--lightest);
 }
 
 .carousel-caption {
@@ -11,7 +12,7 @@
 }
 
 .carouselImage {
-  max-height: 75vh;
+  max-height: 65vh;
 }
 
 .carousel-caption {
