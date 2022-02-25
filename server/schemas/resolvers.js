@@ -1,14 +1,14 @@
 const { Comment, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
-const resolvers = {
+export const resolvers = {
   Query: {
     getComments: async (parent, args, { user }) => {
       return Comment.find().populate('replies');
     }
   },
   Mutation: {
-    login: async (parent, args) => {
+    logIn: async (parent, args) => {
       const user = await User.findOne({ email: args.email });
       if (!user) {
         return { message: "Can't find this user." };
@@ -47,4 +47,4 @@ const resolvers = {
 };
 // need to figure out mutation for editing replies.
 
-module.exports = resolvers;
+// module.exports = resolvers;

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js"
@@ -11,15 +12,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-server-core": "^3.6.3",
     "apollo-server-express": "^3.6.2",
     "bcrypt": "^5.0.1",
-    "cors": "^2.8.5",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
     "graphql": "^16.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.7",
-    "nodemailer": "^6.7.2"
+    "mongoose": "^6.1.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

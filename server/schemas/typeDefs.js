@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-const typeDefs = gql`
+export const typeDefs = gql`
   type User {
     _id: ID!
     name: String!
@@ -10,14 +10,14 @@ const typeDefs = gql`
     _id: ID!
     content: String!
     name: String!
-    date: Date!
+    date: String!
     replies: [Reply]
   }
   type Reply {
-    id: ID!
+    _id: ID!
     content: String!
     name: String!
-    date: Date!
+    date: String!
   }
   type Auth {
     token: ID!
@@ -27,18 +27,23 @@ const typeDefs = gql`
     getComments: Comment
   }
   type Mutation {
-    login(email: String!, password: String!): Auth
-    newComment(id: ID,
-      content: String,
-      name: String,
-      date: Date,
+    logIn(
+      email: String!,
+      password: String!
+      ): Auth
+    newComment(
+      content: String!,
+      name: String!,
+      date: String!
       ): Comment
     removeComment(id: ID): Comment
-    replyComment(id: ID,
-      content: String,
-      name: String,
-      date: Date): Comment
+    replyComment(
+      _id: ID!,
+      content: String!,
+      name: String!,
+      date: String!
+      ): Comment
   }
 `;
 
-// need to figure out the typeDef for editing a reply comment.
+// module.exports = typeDefs;
