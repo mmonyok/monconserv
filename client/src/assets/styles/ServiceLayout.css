@@ -1,10 +1,6 @@
-#sidebar {
+#navWrapper {
   position: sticky !important;
   top: 66px !important;
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap;
-  justify-content: space-around;
   background-color: var(--light);
   border-bottom: 1px solid var(--darkBlue);
   height: 100% !important;
@@ -13,19 +9,23 @@
   z-index: 1000;
 }
 
-.sidebarNav {
-  height: 50px;
-  width: 50px;
-  padding: 0 auto !important;
+#sidebar {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  justify-content: space-around !important;
+  background-color: var(--light);
+  height: 100% !important;
+  width: 100%;
 }
 
 .sideNavLink {
-  width: 100% !important;
-  height: 100% !important;
+  width: 50px !important;
+  height: 50px !important;
   padding: 0 !important;
 }
 
-.sidebarActive {
+.sideNavLink.active {
   border: 1px solid var(--darkBlue);
 }
 
@@ -49,15 +49,14 @@
   flex-direction: column;
 }
 
-
 @media only screen and (min-width: 768px) {
-  #sidebar {
+  #navWrapper {
     top: 70.4px !important;
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .sidebar {
+  .navWrapper {
     height: 70px !important;
   }
 }
@@ -67,18 +66,21 @@
     flex-direction: row;
   }
 
-  #sidebar {
-    flex-direction: column !important;
-    text-align: center !important;
+  #navWrapper {
+    position: sticky !important;
+    top: 70px !important;
     height: calc(100vh - 190px) !important;
     width: 125px !important;
     border-bottom: none;
     margin-right: 12px;
     margin-bottom: 0px !important;
     padding: 0 !important;
-    position: sticky !important;
-    top: 70px !important;
     z-index: 4000;
+  }
+
+  #sidebar {
+    flex-direction: column !important;
+    text-align: center !important;
   }
 
   .sidebarIcons {
@@ -86,17 +88,14 @@
     height: 65px !important;
   }
 
-  .sidebarNav {
-    width: 100px;
-    height: 100px;
-    margin: auto;
-  }
-
   .sideNavLink {
+    width: 100px !important;
+    height: 100px !important;
+    margin: auto;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center;
-    align-items: center;
+    /* align-items: center !important; */
   }
 
   .sidebarLinks {

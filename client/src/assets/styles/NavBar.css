@@ -6,9 +6,12 @@
   border-top-right-radius: 10px;
 }
 
-.navLinks.show {
-  border: 4px solid var(--blue) !important;
-  background-color: var(--blue) !important;
+.navLinks.active {
+  color: var(--blue) !important;
+}
+
+.dropLink.active {
+  background-color: transparent !important;
 }
 
 .notActive {
@@ -16,10 +19,10 @@
   background-color: none !important;
 }
 
-.navLinks:hover {
-  border: 4px solid var(--blue);
-  background-color: var(--blue);
-  color: rgb(270, 0, 30);
+#linkWrap {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #navDropdown {
@@ -31,6 +34,10 @@
   border-bottom: 5px solid var(--blue) !important;
   background-color: var(--light) !important;
   padding: 0 !important;
+}
+
+#navBrand {
+  margin: 5px 0px;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -46,32 +53,36 @@
   border-color: var(--darkBlue) !important;
 }
 
+/* This media query is for where the navBar breaks to toggle mode. */
 @media only screen and (min-width: 768px) {
+  .navLinks:hover {
+    border: 4px solid var(--blue);
+    background-color: var(--blue) !important;
+    color: var(--lightest) !important;
+  }
+
+  #navDropdown:hover {
+    color: var(--lightest);
+  }
+
+  .dropLink:hover {
+    background-color: var(--blue) !important;
+    color: var(--lightest) !important;
+  }
+
   .navLinks.active {
     border: 4px solid var(--blue);
     background-color: var(--blue);
+    color: var(--lightest) !important;
   }
-}
 
-@media only screen and (max-width: 767px) and (min-width: 320px) {
-  #navBrand {
-    margin: 5px 0px;
+  .dropLink.active {
+    border: 0px solid var(--blue) !important;
+    background-color: transparent !important;
   }
-  #linkWrap {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .navLinks {
-    border: none;
-  }
-  .navLinks:hover,
-  #navDropdown:hover {
-    border: none;
-    background-color: transparent;
-    color: var(--blue) !important;
-  }
-  #navToggle {
-    margin: 0 3rem;
+
+  .navLinks.show {
+    border: 4px solid var(--blue) !important;
+    background-color: var(--blue) !important;
   }
 }

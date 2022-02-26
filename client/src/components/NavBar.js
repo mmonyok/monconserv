@@ -35,12 +35,12 @@ const links = [
         href: "/services/brick",
       },
       {
-        name: "Excavation",
-        href: "/services/excavate",
+        name: "Demolition",
+        href: "/services/demolition",
       },
       {
-        name: "Demolition",
-        href: "/services/demolish",
+        name: "Excavation",
+        href: "/services/excavation",
       }
     ]
   },
@@ -81,6 +81,7 @@ function NavBar(props) {
         id="toggler" />
       <Navbar.Collapse id="navToggle" className="justify-content-around font">
         <Nav
+          defaultActiveKey="/home"
           id="linkWrap"
           className="text">
           {links.map((link, a) => (
@@ -92,7 +93,7 @@ function NavBar(props) {
                   id="navDropdown"
                   className={`navLinks ${toggleClass ? 'active' : ''}`}>
                   <NavDropdown.Item
-                    className="text fontBold"
+                    className="text fontBold dropLink"
                     eventKey="10"
                     as={Link}
                     to={link.href}
@@ -101,7 +102,7 @@ function NavBar(props) {
                   {link.services.map((service, b) => (
                     <NavDropdown.Item
                       eventKey={b}
-                      className="text"
+                      className="text dropLink"
                       as={Link}
                       to={service.href}
                       onClick={toggleTrue}>{service.name}</NavDropdown.Item>

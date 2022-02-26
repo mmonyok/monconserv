@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Container, Image, Nav } from 'react-bootstrap';
+import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 // All of our icons
 import concreteIcon from '../assets/images/icons/concreteMixer.png';
 import blockIcon from '../assets/images/icons/concreteBlock.png';
@@ -8,7 +8,6 @@ import brickIcon from '../assets/images/icons/brick.png';
 import excavationIcon from '../assets/images/icons/bobcat.png';
 import demolitionIcon from '../assets/images/icons/jackhammer.png';
 import constructionIcon from '../assets/images/icons/constructionMan.png';
-// Style Sheets
 import '../assets/styles/ServiceLayout.css';
 
 const sidebarNavs = [
@@ -37,32 +36,30 @@ const sidebarNavs = [
     key: "23"
   },
   {
-    name: "Excavate",
-    href: "excavate",
-    src: excavationIcon,
-    key: "24"
-  },
-  {
-    name: "Demolish",
-    href: "demolish",
+    name: "Demolition",
+    href: "demolition",
     src: demolitionIcon,
     key: "25"
   },
+  {
+    name: "Excavation",
+    href: "excavation",
+    src: excavationIcon,
+    key: "24"
+  }
 ];
 
 function ServiceLayout() {
-  let path = window.location.pathname;
   return (
     <Container fluid id="serviceLayout">
-      <Nav
-        activeKey="/services"
-        id="sidebar">
-        {sidebarNavs.map((nav, m) => (
-          <Nav.Item
-            className="sidebarNav text-center">
+      <Navbar className="justify-content-center" id="navWrapper">
+        <Nav
+          defaultActiveKey="/services"
+          id="sidebar">
+          {sidebarNavs.map((nav, m) => (
             <Nav.Link
               as={Link}
-              className={`sideNavLink`}
+              className="sideNavLink text-center"
               to={nav.href}
               eventKey={nav.key}>
               <Image
@@ -71,9 +68,9 @@ function ServiceLayout() {
                 className="sidebarIcons mx-auto" />
               <p className="text fontBold m-0 sidebarLinks">{nav.name}</p>
             </Nav.Link>
-          </Nav.Item>
-        ))}
-      </Nav>
+          ))}
+        </Nav>
+      </Navbar>
       <Outlet />
     </Container>
   )

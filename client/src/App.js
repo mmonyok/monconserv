@@ -12,8 +12,8 @@ import FAQs from './pages/FAQs';
 import Concrete from './pages/Concrete';
 import Block from './pages/Block';
 import Brick from './pages/Brick';
-import Excavate from './pages/Excavate';
-import Demolish from './pages/Demolish';
+import Excavation from './pages/Excavation';
+import Demolition from './pages/Demolition';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './assets/styles/App.css';
 
@@ -32,8 +32,8 @@ function App() {
               <Route path="concrete" element={<Concrete />} />
               <Route path="block" element={<Block />} />
               <Route path="brick" element={<Brick />} />
-              <Route path="excavate" element={<Excavate />} />
-              <Route path="demolish" element={<Demolish />} />
+              <Route path="excavation" element={<Excavation />} />
+              <Route path="demolition" element={<Demolition />} />
             </Route>
             <Route path="reviews" element={<Reviews />} />
             <Route path="faqs" element={<FAQs />} />
