@@ -1,3 +1,5 @@
 import mongoose from 'mongoose';
 
-export default mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/monconserv');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/monconserv');
+
+export const db = mongoose.connection;
