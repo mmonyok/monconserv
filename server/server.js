@@ -2,10 +2,6 @@ import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import express from 'express';
 import http from 'http';
-// const express = require('express');
-// const { ApolloServer } = require('apollo-server-express');
-import path from 'path';
-// import { typeDefs, resolvers } from './schemas/index.js';
 import { authorization } from './utils/auth.js';
 import { db } from './config/connection.js';
 const PORT = process.env.PORT || 3001;
@@ -33,10 +29,10 @@ async function startApolloServer(typeDefs, resolvers) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 
-  db.once('open', () => {
+  // db.once('open', () => {
     httpServer.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
-  });
+  // });
 }
