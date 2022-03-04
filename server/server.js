@@ -5,6 +5,7 @@ import http from 'http';
 import { authorization } from './utils/auth.js';
 import { typeDefs, resolvers } from './schemas/index.js';
 import { db } from './config/connection.js';
+import path from 'path';
 const PORT = process.env.PORT || 3001;
 
 async function startApolloServer(typeDefs, resolvers) {
