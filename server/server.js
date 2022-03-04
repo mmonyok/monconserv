@@ -6,7 +6,7 @@ import { authorization } from './utils/auth.js';
 import { typeDefs, resolvers } from './schemas/index.js';
 import { db } from './config/connection.js';
 import { fileURLToPath } from 'url';
-import { dirname, path } from 'path';
+import { dirname } from 'path';
 const PORT = process.env.PORT || 3001;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -27,11 +27,11 @@ async function startApolloServer(typeDefs, resolvers) {
   app.use(express.json());
 
   if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.use(express.static(__dirname, '../client/build'));
   }
 
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    res.sendFile(__dirname, '../client/build/index.html');
   });
 
   db.once('open', () => {
