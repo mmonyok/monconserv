@@ -3,7 +3,7 @@ import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import express from 'express';
 import http from 'http';
 import { authorization } from './utils/auth.js';
-import { typeDefs, resolver } from './schemas/index.js';
+import { typeDefs, resolvers } from './schemas/index.js';
 import { db } from './config/connection.js';
 const PORT = process.env.PORT || 3001;
 
@@ -38,4 +38,4 @@ async function startApolloServer(typeDefs, resolvers) {
   // });
 }
 
-startApolloServer(typeDefs, resolver);
+startApolloServer(typeDefs, resolvers);
