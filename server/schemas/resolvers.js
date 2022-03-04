@@ -1,5 +1,6 @@
-const { Comment, User } = require('../models');
-const { signToken } = require('../utils/auth');
+import { Comment, User } from '../models/index.js';
+import { authorization } from '../utils/auth.js';
+const { signToken } = authorization;
 
 export const resolvers = {
   Query: {
@@ -46,5 +47,3 @@ export const resolvers = {
   }
 };
 // need to figure out mutation for editing replies.
-
-// module.exports = resolvers;

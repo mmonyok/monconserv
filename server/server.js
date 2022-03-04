@@ -19,23 +19,23 @@ async function startApolloServer(typeDefs, resolvers) {
   await server.start();
   server.applyMiddleware({ app });
 
-  httpServer.use(express.urlencoded({ extended: true }));
-  httpServer.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
 
   if (process.env.NODE_ENV === 'production') {
-    httpServer.use(express.static(path.join(__dirname, '../client/build')));
+    app.use(express.static(path.join(__dirname, '../client/build')));
   }
 
-  httpServer.get('*', (req, res) => {
+  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 
-  // db.once('open', () => {
+  db.once('open', () => {
     httpServer.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
-  // });
+  });
 }
 
 startApolloServer(typeDefs, resolvers);

@@ -1,5 +1,6 @@
-const { Schema, model } = require('mongoose');
-const replySchema = require('./Reply');
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
+import { replySchema } from './Reply.js';
 
 const commentSchema = new Schema({
   content: {
@@ -17,6 +18,4 @@ const commentSchema = new Schema({
   replies: [replySchema]
 });
 
-const Comment = model('Comment', commentSchema);
-
-module.exports = Comment;
+export const Comment = mongoose.model('Comment', commentSchema);
