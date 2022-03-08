@@ -5,12 +5,12 @@ import http from 'http';
 import { authorization } from './utils/auth.js';
 import { typeDefs, resolvers } from './schemas/index.js';
 import { db } from './config/connection.js';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
 import * as path from 'path';
 const PORT = process.env.PORT || 3001;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 async function startApolloServer(typeDefs, resolvers) {
   const app = express();
@@ -27,15 +27,23 @@ async function startApolloServer(typeDefs, resolvers) {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
-  if (process.env.NODE_ENV === "production") {
-    app.use(express.static("build"));
-    app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname,  "build", "index.html"));
-    });
+  // if (process.env.NODE_ENV === "production") {
+  //   app.use(express.static("build"));
+  //   app.get("*", (req, res) => {
+  //     res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+  //   });
+  // }
+  
+  // app.get('*', (req, res) => {
+  //   res.sendFile(__dirname, '../client/public/index.html');
+  // });
+
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
   }
   
   app.get('*', (req, res) => {
-    res.sendFile(__dirname, '../client/public/index.html');
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 
   db.once('open', () => {
