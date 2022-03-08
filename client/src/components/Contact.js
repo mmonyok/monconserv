@@ -134,7 +134,7 @@ export default function Contact(props) {
             <Form
               noValidate
               // Email handling site
-              action="https://formsubmit.co/309580e90c3d4e1a061ef9cd66d48059"
+              action="https://formsubmit.co/7b0edf42ad712fc66e27ebc89cafaa09"
               method="POST"
             >
               {/* controls for customizing the email response */}

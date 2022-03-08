@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Figure, Link, Row } from 'react-bootstrap';
+import { Col, Container, Figure, Row } from 'react-bootstrap';
 import '../assets/styles/ServiceMain.css';
 
 // Main images
