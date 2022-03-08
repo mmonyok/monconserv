@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Figure, Row } from 'react-bootstrap';
+import { Col, Container, Figure, Link, Row } from 'react-bootstrap';
 import '../assets/styles/ServiceMain.css';
 
 // Main images
@@ -14,19 +14,23 @@ const images = [
   {
     title: "Block Work",
     src: block,
+    href: "/services/block"
   },
   {
     title: "Brick Repair",
     src: brick,
-  },
-  {
-    title: "Excavation",
-    src: excavation,
+    href: "/services/brick"
   },
   {
     title: "Demolition",
     src: demolition,
-  }
+    href: "/services/demolition"
+  },
+  {
+    title: "Excavation",
+    src: excavation,
+    href: "/services/excavation"
+  },
 ];
 
 export default function ServiceMain() {
@@ -34,34 +38,38 @@ export default function ServiceMain() {
     <Container>
       <Row>
         <Col>
-          <Figure>
-            <div
-              className="mx-auto w-50 imageWrapper"
-              id="mainWrapper">
-              <Figure.Image
-                rounded
-                src={cement}></Figure.Image>
-              <Figure.Caption
-                className="pe-2 caption text-end">
-                Concrete Work
-              </Figure.Caption>
-            </div>
-          </Figure>
+          <a href="/services/concrete">
+            <Figure>
+              <div
+                className="mx-auto w-50 imageWrapper"
+                id="mainWrapper">
+                <Figure.Image
+                  rounded
+                  src={cement}></Figure.Image>
+                <Figure.Caption
+                  className="pe-2 caption text-end">
+                  Concrete Work
+                </Figure.Caption>
+              </div>
+            </Figure>
+          </a>
         </Col>
       </Row>
       <Row>
         {images.map((image, a) => (
           <Col className="subColumns">
-            <Figure>
-              <div className="imageWrapper">
-                <Figure.Image
-                  key={a}
-                  rounded
-                  src={image.src}></Figure.Image>
-                <Figure.Caption
-                  className="pe-2 caption text-end">{image.title}</Figure.Caption>
-              </div>
-            </Figure>
+            <a href={image.href}>
+              <Figure>
+                <div className="imageWrapper">
+                  <Figure.Image
+                    key={a}
+                    rounded
+                    src={image.src}></Figure.Image>
+                  <Figure.Caption
+                    className="pe-2 caption text-end">{image.title}</Figure.Caption>
+                </div>
+              </Figure>
+            </a>
           </Col>
         ))}
       </Row>
