@@ -15,12 +15,12 @@ const data = [
   {
     image: images['apron1.jpg'],
     title: "Garage Apron Repair",
-    caption: "We cut out the damaged portion then drill holes and insert rebar."
+    caption: "We cut out the damaged portion, fix any rotted foundation, and prep for the pour."
   },
   {
     image: images['apron2.jpg'],
     title: "Garage Apron Repair",
-    caption: "New concrete is filled in and finished."
+    caption: "New concrete is filled in and finished; we can add drainage, if desired."
   },
   {
     image: images['concretePad.jpg'],

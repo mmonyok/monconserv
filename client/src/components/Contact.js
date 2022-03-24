@@ -8,6 +8,7 @@ const schema = Yup.object().shape({
   name: Yup.string().required('*Name is Required.'),
   email: Yup.string().email('Invalid Email').required('*Email is Required.'),
   phone: Yup.string().notRequired(),
+  address: Yup.string().required('*City is Required'),
   content: Yup.string().required('*Brief Description is Required.'),
 });
 
@@ -58,6 +59,7 @@ export default function Contact(props) {
             name: '',
             email: '',
             phone: '',
+            address: '',
             content: '',
           }}
         >
@@ -81,7 +83,7 @@ export default function Contact(props) {
                 name: "name",
                 value: values.name,
                 isInvalid: !!errors.name,
-                isValid: touched.name && !errors.name,
+                // isValid: touched.name && !errors.name,
                 feedback: errors.name
               },
               {
@@ -96,7 +98,7 @@ export default function Contact(props) {
                 name: "email",
                 value: values.email,
                 isInvalid: !!errors.email,
-                isValid: touched.email && !errors.email,
+                // isValid: touched.email && !errors.email,
                 feedback: errors.email
               },
               {
@@ -111,8 +113,23 @@ export default function Contact(props) {
                 name: "phone",
                 value: values.phone,
                 isInvalid: !!errors.phone,
-                isValid: touched.phone && !errors.phone,
+                // isValid: touched.phone && !errors.phone,
                 feedback: errors.phone
+              },
+              {
+                controlId: "formBasicAddress",
+                label: "Address:",
+                textId: "inputIconAddress",
+                icon: "fas fa-location-dot",
+                as: "input",
+                type: "address",
+                text: "Include at least your City",
+                aria: "inputIconAddress",
+                name: "address",
+                value: values.address,
+                isInvalid: !!errors.address,
+                // isValid: touched.address && !errors.address,
+                feedback: errors.address
               },
               {
                 controlId: "formBasicContent",
@@ -126,7 +143,7 @@ export default function Contact(props) {
                 name: "content",
                 value: values.content,
                 isInvalid: !!errors.content,
-                isValid: touched.content && !errors.content,
+                // isValid: touched.content && !errors.content,
                 feedback: errors.content
               }
             ]

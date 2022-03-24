@@ -75,7 +75,7 @@
     margin-right: 12px;
     margin-bottom: 0px !important;
     padding: 0 !important;
-    z-index: 4000;
+    z-index: 1000;
   }
 
   #sidebar {

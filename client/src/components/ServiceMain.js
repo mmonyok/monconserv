@@ -36,14 +36,14 @@ const images = [
 export default function ServiceMain() {
   return (
     <Container>
-      <Row>
+      <Row id="mainWrapper">
         <Col>
           <a href="/services/concrete">
             <Figure>
               <div
-                className="mx-auto w-50 imageWrapper"
-                id="mainWrapper">
+                className="mx-auto imageWrapper">
                 <Figure.Image
+                  className="mx-auto"
                   rounded
                   src={cement}></Figure.Image>
                 <Figure.Caption
@@ -56,13 +56,12 @@ export default function ServiceMain() {
         </Col>
       </Row>
       <Row>
-        {images.map((image, a) => (
+        {images.map((image) => (
           <Col className="subColumns">
             <a href={image.href}>
               <Figure>
                 <div className="imageWrapper">
                   <Figure.Image
-                    key={a}
                     rounded
                     src={image.src}></Figure.Image>
                   <Figure.Caption

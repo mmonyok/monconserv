@@ -13,6 +13,16 @@ const images = importAll(require.context('../assets/images/excavation', false, /
 
 const data = [
   {
+    image: images['drainage1.jpg'],
+    title: "Drainage Pipe",
+    caption: "Sometimes a client's gutter drainage is not optimally set up, so we can assist with adjustments."
+  },
+  {
+    image: images['drainage2.jpg'],
+    title: "Drainage Pipe",
+    caption: "We can even make a drain pipe go under a project such as a new sidewalk."
+  },
+  {
     image: images['skidSteer.jpg'],
     title: "Skid-Steer Loader",
     caption: "We use a skidsteer to help with demolition and excavation of small jobs."
