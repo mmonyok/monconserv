@@ -76,14 +76,13 @@ export default function Brick() {
             We are able to do the following brick repair projects:
           </h4>
         </div>
-        <hr className="hr" />
         <Container fluid className="listContainer justify-content-center">
-          <ListGroup horizontal="sm" className="my-auto  text-center font me-2 listGroup" id="groupE">
+          <ListGroup variant="flush" horizontal="sm" className="my-auto  text-center fontBold me-2 listGroup" id="groupE">
             {services1.map((item) => (
               <ListGroup.Item className="listItem text">{item}</ListGroup.Item>
             ))}
           </ListGroup>
-          <ListGroup horizontal="sm" className="ms-2 font text-center my-auto listGroup" id="groupF">
+          <ListGroup variant="flush" horizontal="sm" className="ms-2 fontBold text-center my-auto listGroup" id="groupF">
             {services2.map((item) => (
               <ListGroup.Item className="listItem text">{item}</ListGroup.Item>
             ))}

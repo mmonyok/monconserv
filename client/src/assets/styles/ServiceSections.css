@@ -2,7 +2,6 @@
   background-color: var(--lightest);
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between !important; */
 }
 
 .serviceSection {
@@ -19,7 +18,7 @@
 }
 
 .listContainer {
-  display: flex;
+  display: inline-flex !important;
   flex-direction: row;
 }
 
@@ -41,10 +40,39 @@
   border-bottom-color: var(--darkBlue) !important;
 }
 
+.listItem {
+  background-color: var(--lightest) !important;
+  border-color: var(--darkBlue) !important;
+}
+
 #optionsBtn {
   width: fit-content;
   background-color: var(--darkBlue);
   border: none;
+}
+
+@media only screen and (min-width: 482px) {
+  .listItem {
+    border: none !important;
+    border-radius: 0% !important;
+  }
+  #groupA > .listItem,
+  #groupE > .listItem {
+    border-bottom: 1px solid var(--darkBlue) !important;
+  }
+
+  #groupD > .listItem {
+    border-top: 1px solid var(--darkBlue) !important;
+  }
+
+  #groupA,
+  #groupB,
+  #groupC,
+  #groupD,
+  #groupE,
+  #groupF {
+    padding: 0 !important;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -53,7 +81,7 @@
   }
 
   .listContainer {
-    display: flex !important;
+    display: inline-flex !important;
     flex-direction: column !important;
   }
 

@@ -67,14 +67,13 @@ export default function Concrete() {
             We are able to do the following concrete projects:
           </h4>
         </div>
-        <hr className="hr" />
-        <Container fluid className="listContainer justify-content-center">
-          <ListGroup horizontal="sm" className="my-auto  text-center font me-2 listGroup" id="groupA">
+        <Container className="listContainer justify-content-center">
+          <ListGroup variant="flush" horizontal="sm" className="my-auto text-center fontBold me-2 listGroup" id="groupA">
             {services1.map((item) => (
               <ListGroup.Item className="listItem text">{item}</ListGroup.Item>
             ))}
           </ListGroup>
-          <ListGroup horizontal="sm" className="ms-2 font text-center my-auto listGroup" id="groupB">
+          <ListGroup variant="flush" horizontal="sm" className="ms-2 fontBold text-center my-auto listGroup" id="groupB">
             {services2.map((item) => (
               <ListGroup.Item className="listItem text">{item}</ListGroup.Item>
             ))}
