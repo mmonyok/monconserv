@@ -18,7 +18,7 @@
 }
 
 .listContainer {
-  display: inline-flex !important;
+  display: flex !important;
   flex-direction: row;
 }
 
@@ -81,7 +81,7 @@
   }
 
   .listContainer {
-    display: inline-flex !important;
+    display: flex !important;
     flex-direction: column !important;
   }
 
