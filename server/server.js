@@ -26,6 +26,7 @@ async function startApolloServer(typeDefs, resolvers) {
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
+  app.use(require('prerender-node').set('prerenderToken', 'owrmZD0o8xRxMXA0ldLz'));
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
