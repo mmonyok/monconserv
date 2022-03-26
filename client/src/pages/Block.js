@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Container, ListGroup, OverlayTrigger, Popover } from 'react-bootstrap';
+import { Container, ListGroup } from 'react-bootstrap';
 import Carousel from '../components/Carousel';
 import '../assets/styles/ServiceSections.css';
 
 function importAll(r) {
   let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  r.keys().map((item, index) => { return images[item.replace('./', '')] = r(item); });
   return images;
 }
 
