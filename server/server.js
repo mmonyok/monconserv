@@ -7,7 +7,6 @@ import { typeDefs, resolvers } from './schemas/index.js';
 import { db } from './config/connection.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import prerender from 'prerender-node';
 import * as path from 'path';
 const PORT = process.env.PORT || 3001;
 const __filename = fileURLToPath(import.meta.url);
@@ -27,13 +26,12 @@ async function startApolloServer(typeDefs, resolvers) {
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
-  app.use(prerender.set('prerenderToken', 'owrmZD0o8xRxMXA0ldLz'));
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
   }
   
-  app.get('*', (req, res) => {
+  app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 
