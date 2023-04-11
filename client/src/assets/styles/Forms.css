@@ -1,60 +1,60 @@
 .contactLink {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 .myModals {
-  z-index: 2000 !important;
+	z-index: 2000 !important;
 }
 
 .modal-backdrop {
-  z-index: 1500 !important;
+	z-index: 1500 !important;
 }
 
 .contactIcons {
-  color: var(--blue);
+	color: var(--blue);
 }
 
 .formIcons {
-  color: var(--lightest);
+	color: var(--lightest);
 }
 
 .modalBody {
-  background-color: var(--lightest);
+	background-color: var(--lightest);
 }
 
 .modalHead {
-  background-color: var(--light);
-  border-bottom: 3px solid var(--darkBlue) !important;
+	background-color: var(--light);
+	border-bottom: 3px solid var(--darkBlue) !important;
 }
 
 #contactBtn,
 #loginBtn {
-  font-family: "Montserrat", sans-serif !important;
-  font-weight: 700 !important;
-  color: var(--light);
-  background-color: var(--darkBlue);
-  border: 1px solid var(--darkBlue);
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 700 !important;
+	color: var(--light);
+	background-color: var(--darkBlue);
+	border: 1px solid var(--darkBlue);
 }
 
 .iconWrap {
-  background-color: var(--darkBlue) !important;
+	background-color: var(--darkBlue) !important;
 }
 
 #phoneIcon {
-  margin-right: 13px;
+	margin-right: 13px;
 }
 
 @media only screen and (max-width: 480px) {
-  .contactIcons {
-    display: none;
-  }
-  #contactEmail,
-  #contactPhone {
-    text-align: center;
-    margin: auto !important;
-  }
+	.contactIcons {
+		display: none;
+	}
+	#contactEmail,
+	#contactPhone {
+		text-align: center;
+		margin: auto !important;
+	}
 
-  #contactEmail {
-    margin-bottom: 16px !important;
-  }
+	#contactEmail {
+		margin-bottom: 16px !important;
+	}
 }
