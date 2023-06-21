@@ -19,6 +19,7 @@ import Demolition from './pages/Demolition';
 import Excavation from './pages/Excavation';
 
 const App = () => {
+	// when bringing back welcome modal, fix why it opens every time you click around on main page within service layout links
 	// const { isOpen: isOpen, onOpen: onOpen, onClose: onClose } = useDisclosure();
 
 	/* useEffect(() => {
