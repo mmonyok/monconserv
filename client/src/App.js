@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Layout from './components/Layout';
@@ -9,10 +8,9 @@ import Home from './pages/Home';
 import Reviews from './pages/Reviews';
 import Services from './pages/Services';
 // These are our service pages.
-import { Box, useDisclosure } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 import './assets/styles/App.css';
-import { WelcomeModal } from './components/WelcomeModal';
 import { Paths } from './config/paths';
 import Block from './pages/Block';
 import Brick from './pages/Brick';
@@ -21,11 +19,11 @@ import Demolition from './pages/Demolition';
 import Excavation from './pages/Excavation';
 
 const App = () => {
-	const { isOpen: isOpen, onOpen: onOpen, onClose: onClose } = useDisclosure();
+	// const { isOpen: isOpen, onOpen: onOpen, onClose: onClose } = useDisclosure();
 
-	useEffect(() => {
+	/* useEffect(() => {
 		onOpen();
-	}, []);
+	}, []); */
 
 	const renderRoutes = () => {
 		return (
@@ -54,7 +52,7 @@ const App = () => {
 				<Routes>{renderRoutes()}</Routes>
 			</Header>
 			<Footer />
-			<WelcomeModal isOpen={isOpen} onClose={onClose} />
+			{/* <WelcomeModal isOpen={isOpen} onClose={onClose} /> */}
 		</Box>
 	);
 };
