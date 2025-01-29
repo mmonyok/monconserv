@@ -5,6 +5,9 @@ import '../assets/styles/Home.css';
 import ServiceMain from '../components/ServiceMain';
 
 export default function Home(props) {
+	const currentYear = new Date().getFullYear();
+	const yearsInBusiness = currentYear - 1995;
+
 	return (
 		<Container className='font text'>
 			<VStack className='text-center'>
@@ -12,8 +15,9 @@ export default function Home(props) {
 				<hr />
 				<h1 className='fontBold'>Welcome!</h1>
 				<p>
-					We are a family owned and locally operated Concrete and Masonry
-					business.
+					We are a family owned Concrete and Masonry business serving the local
+					area for <span className='blueSpan fontBold'>{yearsInBusiness}</span>{' '}
+					years.
 				</p>
 				<p>
 					Take a look around to find out a little bit more about us and what we
