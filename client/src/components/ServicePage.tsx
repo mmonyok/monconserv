@@ -1,4 +1,10 @@
-import { Container, ListGroup } from 'react-bootstrap';
+import {
+	Button,
+	Container,
+	ListGroup,
+	OverlayTrigger,
+	Popover,
+} from 'react-bootstrap';
 import { CarouselData } from '../utils/types';
 import { PhotoCarousel } from './PhotoCarousel';
 
@@ -8,6 +14,7 @@ interface ServicePageProps {
 	services1: string[];
 	services2: string[];
 	imageData: CarouselData[];
+	hasOptions?: boolean;
 }
 
 export const ServicePage = ({
@@ -16,6 +23,7 @@ export const ServicePage = ({
 	services1,
 	services2,
 	imageData,
+	hasOptions,
 }: ServicePageProps) => {
 	return (
 		<Container className='serviceContainer text'>
@@ -46,6 +54,33 @@ export const ServicePage = ({
 						))}
 					</ListGroup>
 				</Container>
+				{hasOptions && (
+					<OverlayTrigger
+						trigger='click'
+						placement='bottom'
+						overlay={
+							<Popover id='popover-positioned-bottom'>
+								<Popover.Body className='font text-center popoverBody'>
+									<ListGroup>
+										<ListGroup.Item className='popItem text'>
+											Colored Concrete
+										</ListGroup.Item>
+										<ListGroup.Item className='popItem text'>
+											Exposed Aggregate Concrete
+										</ListGroup.Item>
+										<ListGroup.Item className='popItem text'>
+											Fiber-Mesh Concrete
+										</ListGroup.Item>
+									</ListGroup>
+								</Popover.Body>
+							</Popover>
+						}
+					>
+						<Button className='mx-auto mt-2' id='optionsBtn'>
+							Concrete Options
+						</Button>
+					</OverlayTrigger>
+				)}
 				<hr className='hr' />
 				<Container className='mt-3'>
 					<PhotoCarousel data={imageData} />

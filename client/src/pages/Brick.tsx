@@ -10,6 +10,7 @@ export default function Brick() {
 		'Tuck-Point Brick Repair',
 	];
 	const services2 = ['Paver Patios', 'Glass Block Windows', 'Brick Veneer'];
+
 	return (
 		<ServicePage
 			title='Brick Repair'
