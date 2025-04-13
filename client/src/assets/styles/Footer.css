@@ -1,31 +1,30 @@
 footer {
-  border-top: 5px solid #1089FF;
-  background-color: var(--light);
+	border-top: 5px solid #1089ff;
+	background-color: var(--light);
 }
 
 footer a {
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
+	color: black;
 }
 
 footer li {
-  list-style: none;
+	list-style: none;
 }
 
 footer ul {
-  padding: 0px;
+	padding: 0px;
 }
 
 .linkIcon {
-  color: #1089FF !important;
+	color: #1089ff !important;
 }
 
 .thumbtack {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-
+	border-left: 2px solid black;
+	border-right: 2px solid black;
 }
 
 .links a:hover {
-  color: #1089FF;
+	color: #1089ff;
 }

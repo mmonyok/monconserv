@@ -1,114 +1,114 @@
 .serviceContainer {
-  background-color: var(--lightest);
-  display: flex;
-  flex-direction: column;
+	background-color: var(--lightest);
+	display: flex;
+	flex-direction: column;
 }
 
 .serviceSection {
-  width: 100%;
+	width: 100%;
 }
 
 .serviceTitle {
-  margin-top: 16px;
+	margin-top: 16px;
 }
 
 .hr {
-  color: var(--darkBlue) !important;
-  opacity: 0.5;
+	color: var(--darkBlue) !important;
+	opacity: 0.5;
 }
 
 .listContainer {
-  display: flex !important;
-  flex-direction: row;
+	display: flex !important;
+	flex-direction: row;
 }
 
 .listItem {
-  padding: 8px !important;
-  border-color: var(--darkBlue) !important;
+	padding: 8px !important;
+	border-color: var(--darkBlue) !important;
 }
 
 .popoverBody {
-  background-color: var(--darkBlue) !important;
+	background-color: var(--darkBlue) !important;
 }
 
 .popItem {
-  border-color: var(--darkBlue) !important;
-  background-color: var(--lightest);
+	border-color: var(--darkBlue) !important;
+	background-color: var(--lightest);
 }
 
 .popover-arrow::after {
-  border-bottom-color: var(--darkBlue) !important;
+	border-bottom-color: var(--darkBlue) !important;
 }
 
 .listItem {
-  background-color: var(--lightest) !important;
-  border-color: var(--darkBlue) !important;
+	background-color: var(--lightest) !important;
+	border-color: var(--darkBlue) !important;
 }
 
 #optionsBtn {
-  width: fit-content;
-  background-color: var(--darkBlue);
-  border: none;
+	width: fit-content;
+	background-color: var(--darkBlue);
+	border: none;
 }
 
 @media only screen and (min-width: 482px) {
-  .listItem {
-    border: none !important;
-    border-radius: 0% !important;
-  }
-  #groupA > .listItem,
-  #groupE > .listItem {
-    border-bottom: 1px solid var(--darkBlue) !important;
-  }
+	.listItem {
+		border: none !important;
+		border-radius: 0% !important;
+	}
+	#groupA > .listItem,
+	#groupE > .listItem {
+		border-bottom: 1px solid var(--darkBlue) !important;
+	}
 
-  #groupD > .listItem {
-    border-top: 1px solid var(--darkBlue) !important;
-  }
+	#groupD > .listItem {
+		border-top: 1px solid var(--darkBlue) !important;
+	}
 
-  #groupA,
-  #groupB,
-  #groupC,
-  #groupD,
-  #groupE,
-  #groupF {
-    padding: 0 !important;
-  }
+	#groupA,
+	#groupB,
+	#groupC,
+	#groupD,
+	#groupE,
+	#groupF {
+		padding: 0 !important;
+	}
 }
 
 @media only screen and (min-width: 768px) {
-  .serviceTitle {
-    text-align: start;
-  }
+	.serviceTitle {
+		text-align: start;
+	}
 
-  .listContainer {
-    display: flex !important;
-    flex-direction: column !important;
-  }
+	.listContainer {
+		display: flex !important;
+		flex-direction: column !important;
+	}
 
-  .listGroup {
-    justify-content: center;
-    padding: 5px 0 !important;
-  }
-  
-  #groupA,
-  #groupB,
-  #groupC,
-  #groupD,
-  #groupE,
-  #groupF {
-    margin: 0px !important;
-  }
+	.listGroup {
+		justify-content: center;
+		padding: 5px 0 !important;
+	}
 
-  .serviceSubText {
-    margin-left: 25px;
-  }
+	#groupA,
+	#groupB,
+	#groupC,
+	#groupD,
+	#groupE,
+	#groupF {
+		margin: 0px !important;
+	}
+
+	.serviceSubText {
+		margin-left: 25px;
+	}
 }
 
 @media only screen and (min-width: 1025px) and (min-height: 850px) {
-  .serviceContainer {
-    flex-direction: row;
-    border-left: 1px solid var(--darkBlue);
-    border-right: 1px solid var(--darkBlue);
-    min-width: calc(100vw - 165px) !important;
-  }
+	.serviceContainer {
+		flex-direction: row;
+		border-left: 1px solid var(--darkBlue);
+		border-right: 1px solid var(--darkBlue);
+		min-width: calc(100vw - 165px) !important;
+	}
 }
