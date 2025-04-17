@@ -12,7 +12,7 @@ import img8 from '../assets/images/masonryRepairs/8_masonry_repairs.jpg';
 import img9 from '../assets/images/masonryRepairs/9_masonry_repairs.jpg';
 import { CarouselData } from '../utils/types';
 
-export const masonryRepairsImagesData: CarouselData[] = [
+export const masonryRepairImagesData: CarouselData[] = [
 	{
 		image: img1,
 		title: 'Foundation Repair',
