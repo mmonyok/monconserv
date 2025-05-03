@@ -12,6 +12,7 @@ import Demolition from './pages/Demolition';
 import Excavation from './pages/Excavation';
 import FAQs from './pages/FAQs';
 import Home from './pages/Home';
+import MasonryRepairs from './pages/MasonryRepairs';
 import Reviews from './pages/Reviews';
 import Services from './pages/Services';
 
@@ -39,6 +40,7 @@ const App = () => {
 						<Route path='brick' element={<Brick />} />
 						<Route path='excavation' element={<Excavation />} />
 						<Route path='demolition' element={<Demolition />} />
+						<Route path='repairs' element={<MasonryRepairs />} />
 					</Route>
 					<Route path='reviews' element={<Reviews />} />
 					<Route path='faqs' element={<FAQs />} />

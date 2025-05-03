@@ -7,9 +7,14 @@ import brick from '../assets/images/brick.jpg';
 import cement from '../assets/images/cement.jpg';
 import demolition from '../assets/images/demolition.jpg';
 import excavation from '../assets/images/excavation.jpg';
+import repairs from '../assets/images/repairs.jpg';
 
-// This array contains image data, which will make our maps function work.
 const images = [
+	{
+		title: 'Concrete Work',
+		src: cement,
+		href: '/services/concrete',
+	},
 	{
 		title: 'Block Work',
 		src: block,
@@ -30,37 +35,24 @@ const images = [
 		src: excavation,
 		href: '/services/excavation',
 	},
+	{
+		title: 'Masonry Repairs',
+		src: repairs,
+		href: '/services/repairs',
+	},
 ];
 
 export default function ServiceMain() {
 	return (
 		<Container>
-			<Row id='mainWrapper'>
-				<Col>
-					<a href='/services/concrete'>
-						<Figure>
-							<div className='mx-auto imageWrapper'>
-								<Figure.Image
-									className='mx-auto'
-									rounded
-									src={cement}
-								></Figure.Image>
-								<Figure.Caption className='pe-2 caption text-end'>
-									Concrete Work
-								</Figure.Caption>
-							</div>
-						</Figure>
-					</a>
-				</Col>
-			</Row>
-			<Row>
-				{images.map((image) => (
-					<Col className='subColumns'>
-						<a href={image.href}>
+			<Row id='mainWrapper' xs={1} sm={2} xl={3}>
+				{images.map((image, index) => (
+					<Col key={index} className='mb-4 d-flex justify-content-center'>
+						<a href={image.href} className='text-decoration-none'>
 							<Figure>
 								<div className='imageWrapper'>
-									<Figure.Image rounded src={image.src}></Figure.Image>
-									<Figure.Caption className='pe-2 caption text-end'>
+									<Figure.Image rounded src={image.src} />
+									<Figure.Caption className='pe-2 caption text-center'>
 										{image.title}
 									</Figure.Caption>
 								</div>

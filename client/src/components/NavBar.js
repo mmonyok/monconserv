@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import MCS from '../assets/images/MCS.svg';
@@ -42,13 +42,17 @@ const links = [
 				name: 'Excavation',
 				href: '/services/excavation',
 			},
+			{
+				name: 'Masonry Repairs',
+				href: '/services/repairs',
+			},
 		],
 	},
-	/* {
-    name: "Reviews",
-    href: "/reviews",
-    key: "e"
-  }, */
+	// {
+	// 	name: 'Reviews',
+	// 	href: '/reviews',
+	// 	key: 'e',
+	// },
 	{
 		name: 'FAQs',
 		href: '/faqs',
