@@ -4,7 +4,7 @@ import logo from '../assets/images/monconserv.png';
 import '../assets/styles/Home.css';
 import ServiceMain from '../components/ServiceMain';
 
-export default function Home(props) {
+export default function Home() {
 	const currentYear = new Date().getFullYear();
 	const yearsInBusiness = currentYear - 1995;
 

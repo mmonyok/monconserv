@@ -15,9 +15,14 @@ import {
 import { appColors } from '../config/constants';
 import { McsLogo } from '../config/icons';
 
-export const WelcomeModal = ({ isOpen, onClose }) => {
+interface WelcomeModalProps {
+	isOpen: boolean;
+	onClose: () => void;
+}
+
+export const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
 	return (
-		<Modal isOpen={isOpen} onClose={onClose} isCentered rounded>
+		<Modal isOpen={isOpen} onClose={onClose} isCentered>
 			<ModalOverlay />
 			<ModalContent>
 				<ModalHeader
