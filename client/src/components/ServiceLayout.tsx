@@ -1,6 +1,5 @@
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
-// All of our icons
 import excavationIcon from '../assets/images/icons/bobcat.png';
 import brickIcon from '../assets/images/icons/brick.png';
 import blockIcon from '../assets/images/icons/concreteBlock.png';
@@ -10,7 +9,14 @@ import demolitionIcon from '../assets/images/icons/jackhammer.png';
 import repairIcon from '../assets/images/icons/repairs.png';
 import '../assets/styles/ServiceLayout.css';
 
-const sidebarNavs = [
+interface SidebarNav {
+	name: string;
+	href: string;
+	src: string;
+	key: string;
+}
+
+const sidebarNavs: SidebarNav[] = [
 	{
 		name: 'Main',
 		href: '/services',
@@ -60,7 +66,7 @@ function ServiceLayout() {
 		<Container fluid id='serviceLayout'>
 			<Navbar className='justify-content-center' id='navWrapper'>
 				<Nav defaultActiveKey='/services' id='sidebar'>
-					{sidebarNavs.map((nav, m) => (
+					{sidebarNavs.map((nav) => (
 						<Nav.Link
 							as={Link}
 							className='sideNavLink text-center'

@@ -1,7 +1,6 @@
-import React from 'react';
 import { Button, Form, InputGroup, Modal } from 'react-bootstrap';
+import type { ModalProps } from 'react-bootstrap';
 import '../assets/styles/Forms.css';
-// Simplifies form validation
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -13,20 +12,33 @@ const schema = Yup.object().shape({
 	content: Yup.string().required('*Brief Description is Required.'),
 });
 
-export default function Contact(props) {
-	const formatPhoneNumber = (value) => {
-		// Remove any non-numeric characters
-		let phoneNumber = value.replace(/\D/g, '');
+interface FormGroupItem {
+	controlId: string;
+	label: string;
+	textId: string;
+	icon: string;
+	as: 'input' | 'textarea';
+	type: string;
+	text: string;
+	aria: string;
+	name: string;
+	value: string;
+	isInvalid: boolean;
+	feedback: string | undefined;
+	rows?: number;
+	onChange?: React.ChangeEventHandler<HTMLInputElement & HTMLTextAreaElement>;
+}
+
+export default function Contact(props: ModalProps) {
+	const formatPhoneNumber = (value: string): string => {
+		const phoneNumber = value.replace(/\D/g, '');
 
 		if (phoneNumber.length <= 3) {
 			return phoneNumber;
 		} else if (phoneNumber.length <= 6) {
 			return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3)}`;
 		} else {
-			return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(
-				3,
-				6
-			)}-${phoneNumber.slice(6, 10)}`;
+			return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
 		}
 	};
 
@@ -44,10 +56,7 @@ export default function Contact(props) {
 			<Modal.Body className='modalBody'>
 				<h5 className='ms-5' id='contactEmail'>
 					Email: {''}
-					<a
-						className='contactLink fontLight'
-						href='mailto:joemonyok@outlook.com'
-					>
+					<a className='contactLink fontLight' href='mailto:joemonyok@outlook.com'>
 						<i className='far fa-envelope me-2 contactIcons'></i>
 						joemonyok@outlook.com
 					</a>
@@ -73,7 +82,7 @@ export default function Contact(props) {
 				<hr />
 				<Formik
 					validationSchema={schema}
-					onSubmit={console.log}
+					onSubmit={(values) => console.log(values)}
 					initialValues={{
 						name: '',
 						email: '',
@@ -82,14 +91,8 @@ export default function Contact(props) {
 						content: '',
 					}}
 				>
-					{({
-						handleChange,
-						handleBlur,
-						values,
-						setFieldValue,
-						isValid,
-						errors,
-						formGroups = [
+					{({ handleChange, handleBlur, values, setFieldValue, isValid, errors }) => {
+						const formGroups: FormGroupItem[] = [
 							{
 								controlId: 'formBasicName',
 								label: 'Name:',
@@ -102,7 +105,6 @@ export default function Contact(props) {
 								name: 'name',
 								value: values.name,
 								isInvalid: !!errors.name,
-								// isValid: touched.name && !errors.name,
 								feedback: errors.name,
 							},
 							{
@@ -117,7 +119,6 @@ export default function Contact(props) {
 								name: 'email',
 								value: values.email,
 								isInvalid: !!errors.email,
-								// isValid: touched.email && !errors.email,
 								feedback: errors.email,
 							},
 							{
@@ -132,7 +133,6 @@ export default function Contact(props) {
 								name: 'phone',
 								value: values.phone,
 								isInvalid: !!errors.phone,
-								// isValid: touched.phone && !errors.phone,
 								feedback: errors.phone,
 								onChange: (e) =>
 									setFieldValue('phone', formatPhoneNumber(e.target.value)),
@@ -149,7 +149,6 @@ export default function Contact(props) {
 								name: 'address',
 								value: values.address,
 								isInvalid: !!errors.address,
-								// isValid: touched.address && !errors.address,
 								feedback: errors.address,
 							},
 							{
@@ -164,84 +163,86 @@ export default function Contact(props) {
 								name: 'content',
 								value: values.content,
 								isInvalid: !!errors.content,
-								// isValid: touched.content && !errors.content,
 								feedback: errors.content,
+								rows: 4,
 							},
-						],
-					}) => (
-						<Form
-							noValidate
-							// Email handling site
-							action='https://formsubmit.co/7b0edf42ad712fc66e27ebc89cafaa09'
-							method='POST'
-						>
-							{/* controls for customizing the email response */}
-							<input
-								type='hidden'
-								name='_subject'
-								value='New Client Message from MCS Website!'
-							/>
-							<input
-								type='hidden'
-								name='_autoresponse'
-								value='Thank you for contacting Monyok Construction Services! We will get back to you as soon as possible.'
-							/>
-							<input type='hidden' name='_template' value='basic' />
-							<input type='hidden' name='_next' value={window.location.href} />
+						];
 
-							{formGroups.map((item) => (
-								<Form.Group className='mb-3' controlId={item.controlId}>
-									<Form.Label className='fontBold mb-0'>
-										{item.label}
-									</Form.Label>
-									<InputGroup hasValidation>
-										<InputGroup.Text className='iconWrap' id={item.textId}>
-											<i className={`formIcons ${item.icon}`}></i>
-										</InputGroup.Text>
-										<Form.Control
-											className='fontLight'
-											rows={4}
-											as={item.as}
-											type={item.type}
-											placeholder={item.text}
-											aria-describedby={item.aria}
-											name={item.name}
-											value={item.value}
-											onChange={item.onChange || handleChange}
-											onBlur={handleBlur}
-											isInvalid={item.isInvalid}
-											isValid={item.isValid}
-										/>
-										<Form.Control.Feedback type='invalid'>
-											{item.feedback}
-										</Form.Control.Feedback>
-										<Form.Control.Feedback type='valid'>
-											Looks Good!
-										</Form.Control.Feedback>
-									</InputGroup>
-								</Form.Group>
-							))}
-							<hr />
-							<div className='text-center font'>
-								<p>
-									You will receive a confirmation email with your entered
-									details upon submission of this form.
-									<br />
-									If you don't receive confirmation within 5 minutes, check your
-									spam filter.
-								</p>
-								<Button
-									id='contactBtn'
-									/* user is unable to submit form until required fields are filled */ disabled={
-										!isValid
-									}
-									type='submit'
-								>
-									Submit
-								</Button>
-							</div>
-						</Form>
-					)}
+						return (
+							<Form
+								noValidate
+								action='https://formsubmit.co/7b0edf42ad712fc66e27ebc89cafaa09'
+								method='POST'
+							>
+								<input
+									type='hidden'
+									name='_subject'
+									value='New Client Message from MCS Website!'
+								/>
+								<input
+									type='hidden'
+									name='_autoresponse'
+									value='Thank you for contacting Monyok Construction Services! We will get back to you as soon as possible.'
+								/>
+								<input type='hidden' name='_template' value='basic' />
+								<input type='hidden' name='_next' value={window.location.href} />
+								<input
+									type='hidden'
+									name='_error'
+									value={`${window.location.origin}/form_error`}
+								/>
+
+								{formGroups.map((item) => (
+									<Form.Group className='mb-3' controlId={item.controlId}>
+										<Form.Label className='fontBold mb-0'>
+											{item.label}
+										</Form.Label>
+										<InputGroup hasValidation>
+											<InputGroup.Text className='iconWrap' id={item.textId}>
+												<i className={`formIcons ${item.icon}`}></i>
+											</InputGroup.Text>
+											<Form.Control
+												className='fontLight'
+												{...(item.rows !== undefined ? ({ rows: item.rows } as {}) : {})}
+												as={item.as}
+												type={item.type}
+												placeholder={item.text}
+												aria-describedby={item.aria}
+												name={item.name}
+												value={item.value}
+												onChange={item.onChange || handleChange}
+												onBlur={handleBlur}
+												isInvalid={item.isInvalid}
+											/>
+											<Form.Control.Feedback type='invalid'>
+												{item.feedback}
+											</Form.Control.Feedback>
+											<Form.Control.Feedback type='valid'>
+												Looks Good!
+											</Form.Control.Feedback>
+										</InputGroup>
+									</Form.Group>
+								))}
+								<hr />
+								<div className='text-center font'>
+									<p>
+										You will receive a confirmation email with your entered
+										details upon submission of this form.
+										<br />
+										If you don't receive confirmation within 5 minutes, check
+										your spam filter.
+									</p>
+									<Button
+										id='contactBtn'
+										disabled={!isValid}
+										type='submit'
+									>
+										Submit
+									</Button>
+								</div>
+							</Form>
+						);
+					}}
 				</Formik>
 			</Modal.Body>
 		</Modal>

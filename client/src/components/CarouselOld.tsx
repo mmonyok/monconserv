@@ -1,7 +1,12 @@
 import { Carousel, Image } from 'react-bootstrap';
 import '../assets/styles/Carousel.css';
+import { CarouselData } from '../utils/types';
 
-export default function CarouselOld({ serviceData }) {
+interface CarouselOldProps {
+	serviceData: CarouselData[];
+}
+
+export default function CarouselOld({ serviceData }: CarouselOldProps) {
 	return (
 		<Carousel variant='dark' className='mb-3' id='carousel'>
 			{serviceData.map((data) => (

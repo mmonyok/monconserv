@@ -3,10 +3,22 @@ import { Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import MCS from '../assets/images/MCS.svg';
 import '../assets/styles/NavBar.css';
-import Contact from './Contact.js';
-import LogIn from './LogIn.js';
+import Contact from './Contact';
+import LogIn from './LogIn';
 
-const links = [
+interface ServiceLink {
+	name: string;
+	href: string;
+}
+
+interface NavLink {
+	name: string;
+	href: string;
+	key: string;
+	services?: ServiceLink[];
+}
+
+const links: NavLink[] = [
 	{
 		name: 'Home',
 		href: '/home',
@@ -60,10 +72,11 @@ const links = [
 	},
 ];
 
-function NavBar(props) {
+function NavBar() {
 	const [showContact, setShowContact] = useState(false);
 	const [showLogIn, setShowLogIn] = useState(false);
 	const [toggleClass, setToggleClass] = useState(false);
+
 	function toggleTrue() {
 		setToggleClass(true);
 	}
@@ -85,12 +98,11 @@ function NavBar(props) {
 			<Navbar.Toggle aria-controls='navToggle' className='me-3' id='toggler' />
 			<Navbar.Collapse id='navToggle' className='justify-content-around font'>
 				<Nav defaultActiveKey='/home' id='linkWrap' className='text'>
-					{links.map((link, a) =>
+					{links.map((link) =>
 						link.name === 'Services' ? (
 							<>
 								<NavDropdown
 									title={link.name}
-									href='#'
 									id='navDropdown'
 									className={`navLinks ${toggleClass ? 'active' : ''}`}
 								>
@@ -104,7 +116,7 @@ function NavBar(props) {
 										All Services
 									</NavDropdown.Item>
 									<NavDropdown.Divider />
-									{link.services.map((service, b) => (
+									{link.services?.map((service, b) => (
 										<NavDropdown.Item
 											eventKey={b}
 											className='text dropLink'

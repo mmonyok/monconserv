@@ -13,6 +13,7 @@ import Excavation from './pages/Excavation';
 import FAQs from './pages/FAQs';
 import Home from './pages/Home';
 import MasonryRepairs from './pages/MasonryRepairs';
+import FormError from './pages/FormError';
 import Reviews from './pages/Reviews';
 import Services from './pages/Services';
 
@@ -44,6 +45,7 @@ const App = () => {
 					</Route>
 					<Route path='reviews' element={<Reviews />} />
 					<Route path='faqs' element={<FAQs />} />
+					<Route path='form_error' element={<FormError />} />
 					<Route path='*' element={<Home />} />
 				</Route>
 			</Routes>
